@@ -12,6 +12,9 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email
 }else
     die("Failure!");
 
-
+//inserting user
+$query = $mysqli->prepare("INSERT INTO Users(username, password,email, role,first_name, last_name, gender) VALUES (?, ?, ?, 2, ?, ?, ?)");
+$query->bind_param("ssssss", $username, $password, $email, $fname, $lname, $gender);
+$query->execute();
 
 ?>
