@@ -12,8 +12,8 @@ $query->execute();
 $array = $query->get_result();
 
 $response = [];
-while($restaurant = $array->fetch_assoc()){
-    $response[] = $restaurant;
+while($review = $array->fetch_assoc()){
+    $response[] = $review;
 } 
 
 $json = json_encode($response);
