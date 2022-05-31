@@ -1,8 +1,8 @@
 <?php
 include("connection.php");
 
-if(isset($_GET["user_id"]) ){
-    $user_id = $_GET["user_id"];
+if(isset($_POST["user_id"]) ){
+    $user_id = $_POST["user_id"];
     $query = $mysqli->prepare("SELECT * from Users where user_id = ?");
     $query->bind_param("s", $user_id);
 }else
