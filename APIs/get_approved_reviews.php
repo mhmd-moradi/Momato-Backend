@@ -6,8 +6,8 @@ $query->execute();
 $array = $query->get_result();
 
 $response = [];
-while($todo = $array->fetch_assoc()){
-    $response[] = $todo;
+while($restaurant = $array->fetch_assoc()){
+    $response[] = $restaurant;
 } 
 
 $json = json_encode($response);
