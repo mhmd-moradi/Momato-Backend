@@ -20,9 +20,9 @@ $query->execute();
 
 $response = [];
 if($mysqli->affected_rows === 1)
-    $response["success"] = true;
+    $response["restaurant_id"] = $mysqli->insert_id;
 else
-    $response["success"] = false;
+    $response["restaurant_id"] = -1;
 
 $json = json_encode($response);
 echo $json;
